@@ -1,0 +1,87 @@
+/* Seconds Ten */
+
+.coc {
+  display: inline-block;
+}
+
+.coc .hourText{
+  display: none;
+}
+
+.coc .days .plusDays{
+  display: none;
+}
+
+.coc *:before {
+  animation-iteration-count: infinite;
+  width: 1ch;
+  overflow: hidden;
+  float: left;
+}
+
+.coc span {
+  float: left;
+}
+
+.secondsOnes:before {
+  content: '9876543210';
+  animation: tenBased 10s steps(10) infinite;
+}
+
+.secondsTens:before {
+  content: '543210';
+  animation: sixBased 60s steps(6) infinite;
+}
+
+.minutesOnes:before {
+  content: '9876543210';
+  animation: tenBased 600s steps(10) infinite;
+}
+
+.minutesTens:before {
+  content: '543210';
+  animation: sixBased 3600s steps(6) infinite;
+}
+
+.hours:before {
+  width: 2ch !important;
+  content: '232221201918171615141312111009080706050403020100';
+  animation: hourBased 86400s steps(24) infinite;
+}
+
+.days:before{
+  content: '9876543210';
+  animation: tenBased 864000s steps(10) infinite;
+}
+
+
+.days {
+  margin-right: 1ch;
+}
+
+@keyframes tenBased {
+  0% {
+    text-indent: 0
+  }
+  100% {
+    text-indent: -10ch;
+  }
+}
+
+@keyframes sixBased {
+  0% {
+    text-indent: 0
+  }
+  100% {
+    text-indent: -6ch;
+  }
+}
+
+@keyframes hourBased {
+  0% {
+    text-indent: 0
+  }
+  100% {
+    text-indent: -47.8ch;
+  }
+}
